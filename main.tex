@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{amsfonts}
 \usepackage{amsmath}
@@ -58,6 +59,9 @@
 
 \begin{document}
     \maketitle
+    \noindent Based on code from 
+    \href{https://github.com/matthew-d-stringer/Mae200-Final-Project}{github.com/matthew-d-stringer/Mae200-Final-Project}
+
     \section*{Step 1: Computing $u(t)$ on $t \in [0,T]$}
     For step 1, we must use adjoint-based optimization in order to compute
     the optimal input $u_k$. To do this, we use the provided code from 
@@ -149,5 +153,10 @@
     Since we only have one input, we can set its weight to 1.
     \begin{verbatim}
         R = 1;
+    \end{verbatim}
+    This results in the following $K$ matrix:
+    \begin{verbatim}
+        K =
+            1.0000 -376.2629  680.7842    6.1759 -175.6396  154.7618
     \end{verbatim}
 \end{document}

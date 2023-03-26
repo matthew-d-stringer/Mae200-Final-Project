@@ -59,4 +59,4 @@ K = lqr(sys, Q,R);
 Q = 1;
 R = 1;
 [kalmf,L,~,Mx,Z] = kalman(sys,Q,R);
-L
+K
