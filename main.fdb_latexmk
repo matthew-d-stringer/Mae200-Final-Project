@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1679805696 "c:/Users/mdsfl/Documents/MAE 200/Final Project/main.tex" "main.pdf" "main" 1679805697
+["pdflatex"] 1679806696 "c:/Users/mdsfl/Documents/MAE 200/Final Project/main.tex" "main.pdf" "main" 1679806697
   "C:/Users/mdsfl/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1679038588 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/mdsfl/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1652480402 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/mdsfl/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1652480402 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -69,9 +69,10 @@
   "C:/Users/mdsfl/AppData/Local/Programs/MiKTeX/tex/latex/listings/listings.cfg" 1623004943 1830 e31effa752c61538383451ae21332364 ""
   "C:/Users/mdsfl/AppData/Local/Programs/MiKTeX/tex/latex/listings/listings.sty" 1623004942 80964 64e57373f36316e4a09b517cbf1aba2e ""
   "C:/Users/mdsfl/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstmisc.sty" 1623004942 77022 ee25ce086f4a79d8cf73bac6f94c02a5 ""
-  "c:/Users/mdsfl/Documents/MAE 200/Final Project/main.tex" 1679805696 6173 27058bb7da442188ca1f5a2305dab7db ""
-  "main.aux" 1679805697 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
-  "main.tex" 1679805696 6173 27058bb7da442188ca1f5a2305dab7db ""
+  "Matlab Code/Step1_final_plot.png" 1679806370 35487 a3ae64766d3aeca0770000b5d9e0d828 ""
+  "c:/Users/mdsfl/Documents/MAE 200/Final Project/main.tex" 1679806695 6281 9beebd993cf4d63d9a46f611839059af ""
+  "main.aux" 1679806697 32 c81c40425fbb5e93b90fba65da0b5e61 "pdflatex"
+  "main.tex" 1679806695 6281 9beebd993cf4d63d9a46f611839059af ""
   (generated)
   "main.aux"
   "main.log"
