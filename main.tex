@@ -82,23 +82,24 @@
     \section*{Step 2: State Estimation on $[0,T]$ based on noisy measurements}
     Depending on the covariance matrix of system noise and process noise, you can
     define $Q$ and $R$ weighting matrices. Then plugging these into equation 22.30
-    of Numerical Renaissance, you can find the steady state value of the $P$ 
-    matrix that enables you answer to calculate an ideal $L$ matrix. Using these
-    values we can calculate the value of $L$ with
+    of Numerical Renaissance, you can march backwards with RK4 to find the 
+    steady state value of the $P$ matrix that enables you answer to calculate an 
+    optimal $L$ matrix. 
+    Using these values we can calculate the value of $L$ with
     \begin{equation*}
-        L = -PC^H Q_2^{-1}.
+        L = -PC^H Q_2^{-1}
     \end{equation*} 
     
     \section*{Step 3: Feedback Control}
-    Using the Algebraic Ricatti Equation we can march backwards to determine the
-    $X$ from equation 22.13a of Numerical Renaissance. By calculating this $X$ 
-    matrix we can determine an optimal $K$ matrix. This is done by solving the
-    equation,
+    Using the Algebraic Ricatti Equation we can march backwards using RK4 to 
+    determine the $X$ from equation 22.13a of Numerical Renaissance. 
+    By calculating this $X$ matrix we can determine an optimal $K$ matrix. 
+    This is done by solving the equation,
     \begin{equation*}
         K = -R^{-1} B^H X.
     \end{equation*}
 
-    \section*{Step 4: State Estimation based on $\alpha$-horizon}
+    \section*{Step 4: State Estimation based on $\infty$-horizon}
     I began with constructing my model of my system based on the linearized
     model around equation 22.34 of Numerical Renaissance. 
 
