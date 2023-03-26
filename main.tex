@@ -151,6 +151,34 @@
             
             Continuous-time state-space model.
     \end{verbatim}
+    Setting our $Q$ matrix to 1, and our $R$ matrix to 1,
+    we create a Kalman filter using the following code,
+    \begin{verbatim}
+        Q = 1;
+        R = 1;
+        [kalmf,L,~,Mx,Z] = kalman(sys,Q,R);
+    \end{verbatim}
+    This results in an $L$ matrix 
+    \begin{verbatim}
+        L =
+            0.4575    0.3394    0.3830
+            0.3394    4.5172    0.2583
+            0.3830    0.2583    9.0800
+            0.2356    0.9622    1.9510
+            0.8249   10.2934    1.8422
+            1.7895    1.7995   41.3303
+    \end{verbatim}
 
-    \section*{Step 5}
+    \section*{Step 5: Optimal Control}
+    Using the linearized model described in Step 5, it is possible
+    to utilize MATLAB's \texttt{lqr} function.
+    Since we primarily care about the positional states of our system,
+    we set their weights to be twice as large as their derivatives.
+    \begin{verbatim}
+        Q = diag([1 1 1 0.5 0.5 0.5]);
+    \end{verbatim}
+    Since we only have one input, we can set its weight to 1.
+    \begin{verbatim}
+        R = 1;
+    \end{verbatim}
 \end{document}

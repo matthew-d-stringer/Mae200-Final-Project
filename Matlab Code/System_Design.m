@@ -49,12 +49,9 @@ B = inv(E)*B_bar;
 C = eye(3, 6);
 D = 0;
 
-sys = ss(A,B,C,D)
+sys = ss(A,B,C,D);
 
-Q = [
-    eye(3) zeros(3)
-    zeros(3) zeros(3)
-];
+Q = diag([1 1 1 0.5 0.5 0.5]);
 R = 1;
 
 K = lqr(sys, Q,R);
@@ -62,3 +59,4 @@ K = lqr(sys, Q,R);
 Q = 1;
 R = 1;
 [kalmf,L,~,Mx,Z] = kalman(sys,Q,R);
+L
