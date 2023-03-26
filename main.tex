@@ -1,0 +1,121 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage[
+    letterpaper,
+    margin=0.4in,
+    tmargin=0.7in,
+    bmargin=0.7in,
+    headsep=12pt,
+    footskip=12pt
+]{geometry}
+
+\theoremstyle{definition}
+\newtheorem*{ques}{Question}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\trace}{\operatorname{trace}}
+
+% <Laplace Transform>
+\usepackage{mathrsfs}
+\newsavebox\foobox
+\newlength{\foodim}
+\newcommand{\slantbox}[2][0]{\mbox{%
+        \sbox{\foobox}{#2}%
+        \foodim=#1\wd\foobox
+        \hskip \wd\foobox
+        \hskip -0.5\foodim
+        \pdfsave
+        \pdfsetmatrix{1 0 #1 1}%
+        \llap{\usebox{\foobox}}%
+        \pdfrestore
+        \hskip 0.5\foodim
+}}
+\def\Laplace{\slantbox[-.45]{$\mathscr{L}$}}
+% </Laplace Transform>
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{MAE 200}
+\lhead{Matthew Stringer}
+\chead{Final project}
+\cfoot{\thepage}
+
+\title{MAE 200 Final project}
+\author{Matthew Stringer}
+\date{}
+
+\renewcommand{\ques}[1]{\section*{Question #1.}}
+
+\begin{document}
+    \maketitle
+    \section*{Step 1}
+    
+    \section*{Step 2}
+    
+    \section*{Step 3}
+
+    \section*{Step 4: State Estimation based on $\alpha$-horizon}
+    I began with constructing my model of my system based on the linearized
+    model around equation 22.34 of Numerical Renaissance. 
+    This resulted in the following code:
+    \begin{verbatim}
+        E = [
+            mc+m1+m2  -m1*l1       -m2*l1;
+            -m1*l1   I1+m1*l1^2      0  ;
+            -m2*l2    0          (I2 + m2*l2^2);
+        ];
+
+        E = [
+            eye(3) zeros(3)
+            zeros(3) E
+        ];
+
+        A_bar = [
+            0   0       0
+            0 m1*g*l2   0
+            0   0      m2*g*l2
+        ];
+
+        A_bar = [ 
+            zeros(3)  eye(3) 
+            A_bar zeros(3)
+        ];
+
+        B_bar = [
+            0
+            0
+            0
+            1
+            0
+            0
+        ];
+    \end{verbatim}
+    Since $E$ is invertible around $\vec q = \vec 0$, we can solve for 
+    the $A$ and $B$ matrices from the standard form,
+    \begin{eqnarray*}
+        \dot q = A q + B u,
+    \end{eqnarray*}
+    by inverting the $E$ matrix. 
+    Thus, we create the following code
+    \begin{verbatim}
+        A = inv(E)*A_bar;
+        B = inv(E)*B_bar;
+
+        C = eye(3, 6);
+        D = 0;
+
+        sys = ss(A,B,C,D);
+    \end{verbatim}
+
+    \section*{Step 5}
+\end{document}
