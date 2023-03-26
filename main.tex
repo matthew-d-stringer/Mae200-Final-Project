@@ -58,7 +58,36 @@
 
 \begin{document}
     \maketitle
-    \section*{Step 1}
+    \section*{Step 1: Computing $u(t)$ on $t \in [0,T]$}
+    For step 1, we must use adjoint-based optimization in order to compute
+    the optimal input $u_k$. To do this, we use the provided code from 
+    Numerical Renaissance to calculate a more optimal input given a previous
+    "guess" input. In order to get a satisfactory input, 2 things were done:
+    First, an initial optimal input was generated given no input at all.
+    Second, several more inputs were generated based on the previous computed
+    optimal input.
+    This results in a more optimal input.
+    While generating inputs, I found that it was easier to generate satisfactory
+    system responses when given a larger time horizon of 5 seconds rather than
+    the default 3 second time horizon.
+    This resulted in the following program from \texttt{Dual\_Pendulum\_Input.m}
+    \begin{verbatim}
+        T = 5;
+        u_k = zeros(T/0.01+1,1);
+        [u_k x_k] = NR_Dual_Pendulum(T, u_k);
+
+        t = 0:0.01:T;
+
+        for i = 1:3
+            [u_k x_k] = NR_Dual_Pendulum(T, u_k);
+        end
+        close all
+        hold on
+        plot(t, x_k(1,:))
+        plot(t, x_k(2,:))
+        plot(t, x_k(3,:))
+        hold off
+    \end{verbatim}
     
     \section*{Step 2}
     
