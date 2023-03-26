@@ -116,6 +116,41 @@
 
         sys = ss(A,B,C,D);
     \end{verbatim}
+    After running this code, we are left with the following system
+    \begin{verbatim}
+        sys =
+            A = 
+                    x1      x2      x3      x4      x5      x6
+            x1       0       0       0       1       0       0
+            x2       0       0       0       0       1       0
+            x3       0       0       0       0       0       1
+            x4       0   0.491   0.982       0       0       0
+            x5       0   5.175  0.9428       0       0       0
+            x6       0  0.9428    20.7       0       0       0
+            
+            B = 
+                    u1
+            x1       0
+            x2       0
+            x3       0
+            x4  0.1044
+            x5  0.1002
+            x6  0.2004
+            
+            C = 
+                x1  x2  x3  x4  x5  x6
+            y1   1   0   0   0   0   0
+            y2   0   1   0   0   0   0
+            y3   0   0   1   0   0   0
+            
+            D = 
+                u1
+            y1   0
+            y2   0
+            y3   0
+            
+            Continuous-time state-space model.
+    \end{verbatim}
 
     \section*{Step 5}
 \end{document}
