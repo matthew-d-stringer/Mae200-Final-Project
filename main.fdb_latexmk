@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1679808158 "c:/Users/mdsfl/Documents/MAE 200/Final Project/main.tex" "main.pdf" "main" 1679808159
+["pdflatex"] 1679811097 "c:/Users/mdsfl/Documents/MAE 200/Final Project/main.tex" "main.pdf" "main" 1679811098
   "C:/Users/mdsfl/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1679808042 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/mdsfl/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1652480402 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/mdsfl/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1652480402 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -33,7 +33,9 @@
   "C:/Users/mdsfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/mdsfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/mdsfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
+  "C:/Users/mdsfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
   "C:/Users/mdsfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Users/mdsfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
   "C:/Users/mdsfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1247596667 31099 342ef5a582aacbd3346f3cf4579679fa ""
   "C:/Users/mdsfl/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580393758 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/mdsfl/AppData/Local/Programs/MiKTeX/tex/generic/atbegshi/atbegshi.sty" 1575574700 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -98,11 +100,11 @@
   "C:/Users/mdsfl/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty" 1576437552 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "C:/Users/mdsfl/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657800696 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "C:/Users/mdsfl/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "Matlab Code/Step1_final_plot.png" 1679806370 35487 a3ae64766d3aeca0770000b5d9e0d828 ""
-  "c:/Users/mdsfl/Documents/MAE 200/Final Project/main.tex" 1679808158 5275 86b1beae2f8de847b30b95eaa665de81 ""
-  "main.aux" 1679808159 686 4ce905362b6645b598ea182482e9aeed "pdflatex"
+  "Matlab Code/Step1_final_plot.png" 1679811084 35422 1f1b06d97191f79ab3d5f7a1614860fc ""
+  "c:/Users/mdsfl/Documents/MAE 200/Final Project/main.tex" 1679811096 5693 db54612565a66b491b53952a2fd81570 ""
+  "main.aux" 1679811098 686 470fdebd29f279999e89f3533b8c7bc8 "pdflatex"
   "main.out" 0 -1 0 "pdflatex"
-  "main.tex" 1679808158 5275 86b1beae2f8de847b30b95eaa665de81 ""
+  "main.tex" 1679811096 5693 db54612565a66b491b53952a2fd81570 ""
   (generated)
   "main.aux"
   "main.log"

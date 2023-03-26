@@ -79,9 +79,17 @@
         \includegraphics*[width=4in]{Matlab Code/Step1_final_plot.png}
     \end{center}
 
-    \section*{Step 2}
+    \section*{Step 2: State Estimation on $[0,T]$ based on noisy measurements}
+    % 22.30
     
-    \section*{Step 3}
+    \section*{Step 3: Feedback Control}
+    Using the Algebraic Ricatti Equation we can march backwards to determine the
+    $X$ from equation 22.13a of Numerical Renaissance. By calculating this $X$ 
+    matrix we can determine an optimal $K$ matrix. This is done by solving the
+    equation,
+    \begin{equation*}
+        K = -R^{-1} B^H X.
+    \end{equation*}
 
     \section*{Step 4: State Estimation based on $\alpha$-horizon}
     I began with constructing my model of my system based on the linearized
