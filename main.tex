@@ -80,7 +80,14 @@
     \end{center}
 
     \section*{Step 2: State Estimation on $[0,T]$ based on noisy measurements}
-    % 22.30
+    Depending on the covariance matrix of system noise and process noise, you can
+    define $Q$ and $R$ weighting matrices. Then plugging these into equation 22.30
+    of Numerical Renaissance, you can find the steady state value of the $P$ 
+    matrix that enables you answer to calculate an ideal $L$ matrix. Using these
+    values we can calculate the value of $L$ with
+    \begin{equation*}
+        L = -PC^H Q_2^{-1}.
+    \end{equation*} 
     
     \section*{Step 3: Feedback Control}
     Using the Algebraic Ricatti Equation we can march backwards to determine the
