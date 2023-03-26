@@ -70,25 +70,7 @@
     While generating inputs, I found that it was easier to generate satisfactory
     system responses when given a larger time horizon of 5 seconds rather than
     the default 3 second time horizon.
-    This resulted in the following program from \texttt{Dual\_Pendulum\_Input.m}
-    \begin{verbatim}
-        T = 5;
-        u_k = zeros(T/0.01+1,1);
-        [u_k x_k] = NR_Dual_Pendulum(T, u_k);
-
-        t = 0:0.01:T;
-
-        for i = 1:3
-            [u_k x_k] = NR_Dual_Pendulum(T, u_k);
-        end
-        close all
-        hold on
-        plot(t, x_k(1,:))
-        plot(t, x_k(2,:))
-        plot(t, x_k(3,:))
-        hold off
-    \end{verbatim}
-
+    This program in contained in \texttt{Dual\_Pendulum\_Input.m}
     \begin{center}
         \includegraphics*[width=4in]{Matlab Code/Step1_final_plot.png}
     \end{center}
@@ -100,56 +82,15 @@
     \section*{Step 4: State Estimation based on $\alpha$-horizon}
     I began with constructing my model of my system based on the linearized
     model around equation 22.34 of Numerical Renaissance. 
-    This resulted in the following code:
-    \begin{verbatim}
-        E = [
-            mc+m1+m2  -m1*l1       -m2*l1;
-            -m1*l1   I1+m1*l1^2      0  ;
-            -m2*l2    0          (I2 + m2*l2^2);
-        ];
 
-        E = [
-            eye(3) zeros(3)
-            zeros(3) E
-        ];
-
-        A_bar = [
-            0   0       0
-            0 m1*g*l2   0
-            0   0      m2*g*l2
-        ];
-
-        A_bar = [ 
-            zeros(3)  eye(3) 
-            A_bar zeros(3)
-        ];
-
-        B_bar = [
-            0
-            0
-            0
-            1
-            0
-            0
-        ];
-    \end{verbatim}
     Since $E$ is invertible around $\vec q = \vec 0$, we can solve for 
     the $A$ and $B$ matrices from the standard form,
     \begin{eqnarray*}
         \dot q = A q + B u,
     \end{eqnarray*}
     by inverting the $E$ matrix. 
-    Thus, we create the following code
-    \begin{verbatim}
-        A = inv(E)*A_bar;
-        B = inv(E)*B_bar;
 
-        C = eye(3, 6);
-        D = 0;
-
-        sys = ss(A,B,C,D);
-    \end{verbatim}
-    After running this code, we are left with the following system
+    After inputting these matrices into matlab, we are left with the following system:
     \begin{verbatim}
         sys =
             A = 
@@ -185,12 +126,7 @@
             Continuous-time state-space model.
     \end{verbatim}
     Setting our $Q$ matrix to 1, and our $R$ matrix to 1,
-    we create a Kalman filter using the following code,
-    \begin{verbatim}
-        Q = 1;
-        R = 1;
-        [kalmf,L,~,Mx,Z] = kalman(sys,Q,R);
-    \end{verbatim}
+    we create a Kalman filter using the \texttt{kalman} function.
     This results in an $L$ matrix 
     \begin{verbatim}
         L =
